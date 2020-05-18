@@ -2,18 +2,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: 192.168.99.102
+  host: localhost
   port: 5005
   username: demo
+  password: 123456
 
 development:
   <<: *default
   database: rails_demo_1_development
-  #password:
+  password: 123456
 
 test:
   <<: *default
   database: rails_demo_1_test
+  password: 123456
 
 production:
   <<: *default
